@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -167,194 +167,101 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'ARE ALWAYS IN THE <span>BOTTOM</span> OF MY HEART.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>海底月是天上月，眼前人，是你。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/01/21/Unity事件监听与广播/"></a></h3>
-                    <span>
-                        <span class="post-meta">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
       <time datetime="2019-01-21T06:42:42.908Z" itemprop="datePublished">
           2019-01-21
       </time>
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        示例：用按钮控制文本显示隐藏1  在btn上挂一个脚本1234567GetComponent&lt;Button&gt;().onClick.AddListener(() =&gt;&#123;​	text.text=&quot;&quot;&#125;)；
-缺点：text物体被删除后会报错
-Unity Lambda表达式Lambda表达式是一个匿名函数，所有的Lambda表达式都使用运算符=&gt;。该运算符左边是输入参数，右边包含表
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/01/21/Unity事件监听与广播/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+                <h1></h1>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/01/21/HTV vive开发入门/">HTV Vive开发入门</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-01-21T05:17:52.000Z" itemprop="datePublished">
-          2019-01-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/Unity/'>-Unity</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        SteamVR：预制体CameraRig 表示HTC vive的头盔和手柄
-删除自带的maincam和灯光
-game窗口1920*1080
-canvas下面创建物体，按住alt点那个正方形格子可以缩放到一样大
-nativesize可以让UI图标缩放到原始大小
-toggle与togglegroup
+        <div class="col-md-8 col-md-offset-2">
+      		<h4 id="示例：用按钮控制文本显示隐藏"><a href="#示例：用按钮控制文本显示隐藏" class="headerlink" title="示例：用按钮控制文本显示隐藏"></a>示例：用按钮控制文本显示隐藏</h4><h5 id="1-在btn上挂一个脚本"><a href="#1-在btn上挂一个脚本" class="headerlink" title="1  在btn上挂一个脚本"></a>1  在btn上挂一个脚本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GetComponent&lt;Button&gt;().onClick.AddListener(() =&gt;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">​	text.text=&quot;&quot;</span><br><span class="line"></span><br><span class="line">&#125;)；</span><br></pre></td></tr></table></figure>
+<p>缺点：text物体被删除后会报错</p>
+<h6 id="Unity-Lambda表达式"><a href="#Unity-Lambda表达式" class="headerlink" title="Unity Lambda表达式"></a>Unity Lambda表达式</h6><p>Lambda表达式是一个匿名函数，所有的Lambda表达式都使用运算符=&gt;。该运算符左边是输入参数，右边包含表达式或语句块。</p>
+<h5 id="2-在txt上挂一个脚本"><a href="#2-在txt上挂一个脚本" class="headerlink" title="2  在txt上挂一个脚本"></a>2  在txt上挂一个脚本</h5><p>ShowText.cs</p>
+<p>把这个类做成一个单例模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static ShowText Instance;</span><br><span class="line"></span><br><span class="line">private void Awake()</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">​	Instance=this;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void Show(string str)</span><br><span class="line">&#123;</span><br><span class="line">    GetComponent&lt;Text&gt;().text=str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>BtnClick.cs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GetComponent&lt;Button&gt;().onClick.AddListener(() =&gt;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">​	ShowText.Instance.Show(&quot;content&quot;)</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>缺点：耦合性高</p>
+<h5 id="3-将调用的方法做成一个监听"><a href="#3-将调用的方法做成一个监听" class="headerlink" title="3  将调用的方法做成一个监听"></a>3  将调用的方法做成一个监听</h5><p>ShowText.cs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private void Awake()</span><br><span class="line">&#123;</span><br><span class="line">    EventCentet.AddListener&lt;string&gt;(EventType.ShowText,show);</span><br><span class="line">&#125;</span><br><span class="line">private void show(string str)&#123;</span><br><span class="line">    //显示隐藏UI</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>BtnClick.cs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private void Awake()</span><br><span class="line">&#123;</span><br><span class="line">	GetComponent&lt;Button&gt;().onclick.AddListener(() =&gt;</span><br><span class="line">	&#123;</span><br><span class="line">        EventCenter.Broadcast(EventType.ShowText,&quot;content&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>好处：只要把事件广播出去，是否有对象对其监听是无所谓的</p>
 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/01/21/HTV vive开发入门/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/01/20/DT-MRI-Streamsurfaces-Revisited/">DT-MRI Streamsurfaces Revisited</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-01-20T10:38:52.000Z" itemprop="datePublished">
-          2019-01-20
-      </time>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     
-    | 
-    <a href='/tags/Testing/'>-Testing</a>
+    <a class="pull-right" href="/2019/01/21/HTV vive开发入门/">
+        HTV Vive开发入门 →
+    </a>
     
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/01/20/DT-MRI-Streamsurfaces-Revisited/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/01/16/hello-world/">Hello World</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-01-16T10:01:12.167Z" itemprop="datePublished">
-          2019-01-16
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/01/16/hello-world/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          
-        </nav>
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>只要你喜欢我，我也可以下雨天为你打伞，下雪天就算了，冻手。</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+
 
       
 <!-- ============================ Footer =========================== -->
