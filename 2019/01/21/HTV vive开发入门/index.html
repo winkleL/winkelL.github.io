@@ -193,7 +193,35 @@
 <p>canvas下面创建物体，按住alt点那个正方形格子可以缩放到一样大</p>
 <p>nativesize可以让UI图标缩放到原始大小</p>
 <p>toggle与togglegroup</p>
+<p>安装VRTK插件</p>
+<h5 id="一些扩展知识"><a href="#一些扩展知识" class="headerlink" title="一些扩展知识"></a><strong>一些扩展知识</strong></h5><p>Awake():在脚本对象被实例化时调用</p>
+<p>Start():对象的第一帧时被调用</p>
+<p>脚本中的一些成员如果想在创建之后的代码中立即使用，使用Awake()</p>
+<h5 id="面试题：Unity3d中关于Awake-、Start-、OnEnable-等的执行顺序关系"><a href="#面试题：Unity3d中关于Awake-、Start-、OnEnable-等的执行顺序关系" class="headerlink" title="面试题：Unity3d中关于Awake()、Start()、OnEnable()等的执行顺序关系"></a><strong><em>面试题：Unity3d中关于Awake()、Start()、OnEnable()等的执行顺序关系</em></strong></h5><p>同一个脚本上的这四个方法在初始化时的执行顺序总是如下：</p>
+<p>Awake()-&gt;OnEnable()-&gt;OnLevelWasLoaded()(仅在场景改变时)-&gt;Start()；</p>
+<p>但如果这个脚本.Enable=false；顺序就会变了：</p>
+<p>OnLevelWasLoaded()(仅在场景改变时)会最先执行，然后是Awake()，而OnEnale()和Start()直到Enable=true时才执行；</p>
+<p>对于不同的脚本的四类方法的执行顺序是交错的，假设我们声明一个特殊的自定义的顺序:A&lt;B,那么执行顺序：</p>
+<p>A.Awake()-&gt;A.OnEnable()-&gt;B.Awake()-&gt;B.OnEnable()-&gt;?.OnLevelWasLoaded()-&gt;?.OnLevelWasLoaded()-&gt;A.Start()-&gt;B.Start()?表示无法确定谁先执行</p>
+<p>如果一个脚本是DontDestroyOnLoad()，则情况会更加复杂，执行顺序会如下，而自定义的顺序将不再遵守</p>
+<p>Awake()仅在最初始状态执行一次，之后不再执行；<br>OnEnable()-&gt;OnLevelWasLoaded();//当DontDestroyOnLoad为false时，这2个顺序相反；<br>Start()仅在最初始状态执行一次，之后不再执行；</p>
+<p>此外，对于自定义的执行顺序A<b 还存在一个bug，="" 如果a有onenable()而b没有：a.awake()-="">A.OnEnable()-&gt;B.Awake();</b></p>
+<p>如果B有OnEnable()而A没有: B.Awake()-&gt;B.OnEnable()-&lt;A.Awake()</p>
 <h4 id="（一）右手手柄射线检测"><a href="#（一）右手手柄射线检测" class="headerlink" title="（一）右手手柄射线检测"></a><strong>（一）右手手柄射线检测</strong></h4><p><img src="/21/HTV vive开发入门/shoubing.jpg" alt="手柄"></p>
+<h6 id="VRTK-Controller-Events组件"><a href="#VRTK-Controller-Events组件" class="headerlink" title="VRTK_Controller Events组件"></a><strong>VRTK_Controller Events组件</strong></h6><p>将调用的事件与案件进行绑定</p>
+<h6 id="VRTK-Simple-Pointer组件"><a href="#VRTK-Simple-Pointer组件" class="headerlink" title="VRTK_Simple Pointer组件"></a><strong>VRTK_Simple Pointer组件</strong></h6><p>射线检测</p>
+<p>Enable Teleport  是否启用瞬移</p>
+<p>Controller  程序运行时会自动获取本物体上的Controller</p>
+<p>Pointer Hit Color  碰到有Collider的物体</p>
+<p>Pointer Miss Color</p>
+<p>Pointer Visibility 第一个选项表示按下大圆盘按键进行触发</p>
+<p>Pointer Length  射线长度</p>
+<p>Layers To Ingore  忽略不和射线进行交互的层</p>
+<h6 id="VRTK-UI-Pointer"><a href="#VRTK-UI-Pointer" class="headerlink" title="VRTK_UI Pointer"></a><strong>VRTK_UI Pointer</strong></h6><p>和UI交互</p>
+<p>Activation Mode  Hold_Button/Toggle</p>
+<p>Ignore Canvas</p>
+<h4 id="（二）UI交互"><a href="#（二）UI交互" class="headerlink" title="（二）UI交互"></a><strong>（二）UI交互</strong></h4><h5 id="1、Toggle"><a href="#1、Toggle" class="headerlink" title="1、Toggle"></a><strong>1、Toggle</strong></h5><p>onValueChanged</p>
+<p>isOn</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
