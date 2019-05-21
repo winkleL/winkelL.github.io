@@ -188,11 +188,17 @@
         </div>
         <div class="col-md-8 col-md-offset-2">
       		<h4 id="一-游戏存档之PlayerPrefs的用法"><a href="#一-游戏存档之PlayerPrefs的用法" class="headerlink" title="一  游戏存档之PlayerPrefs的用法"></a><strong>一  游戏存档之PlayerPrefs的用法</strong></h4><p>Unity3d提供了一个用于本地持久化保存与读取的类——PlayerPrefs。工作原理非常简单，以键值对的形式将数据保存在文件中，然后程序可以根据这个名称取出上次保存的数值。<br>    PlayerPrefs类支持3中数据类型的保存和读取，浮点型，整形，和字符串型。<br>    分别对应的函数为：<br>    SetInt();保存整型数据；<br>    GetInt();读取整形数据；<br>    SetFloat();保存浮点型数据；<br>    GetFlost();读取浮点型数据；<br>    SetString();保存字符串型数据；<br>    GetString();读取字符串型数据；<br>这些函数的用法基本一致使用Set进行保存，使用Get进行读取。</p>
+<h4 id="二-进度加载的实现"><a href="#二-进度加载的实现" class="headerlink" title="二  进度加载的实现"></a><strong>二  进度加载的实现</strong></h4><p>使用协程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class Loading:MonoBehaviour&#123;</span><br><span class="line">public string SenceName;</span><br><span class="line"></span><br><span class="line">private AsyncOperation ao;</span><br><span class="line">bool isLoad=false;</span><br><span class="line"></span><br><span class="line">IEnumerator Load()&#123;</span><br><span class="line"></span><br><span class="line">//进度加载数值变化</span><br><span class="line"></span><br><span class="line">//使用异步加载</span><br><span class="line">当还处于加载过程中时：</span><br><span class="line">	if(!isLoad)&#123;</span><br><span class="line">		ao=SenceManager.LoadSenceAsync(SenceName)；</span><br><span class="line">		ao.AllowSenceActivation=false;</span><br><span class="line">		isLoad=true;</span><br><span class="line">	&#125;</span><br><span class="line">	yield return new WaitForEndOfFrame();</span><br><span class="line">加载完成：</span><br><span class="line">	ao.AllowSenceActication=true;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/05/21/跌跌撞撞TA之路/" style="float: left;">
+        ← 
+    </a>
     
     
     <a class="pull-right" href="/2019/01/24/Python碎碎念/">
